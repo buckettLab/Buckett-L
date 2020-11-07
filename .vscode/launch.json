@@ -1,0 +1,36 @@
+{
+    " versão " : " 0.2.0 " ,
+    " configurações " : [
+      {
+        " tipo " : " nó " ,
+        " request " : " launch " ,
+        " nome " : " npm run dev " ,
+        " runtimeExecutable " : " npm " ,
+        " windows " : {
+          " runtimeExecutable " : " npm.cmd "
+        },
+        " runtimeArgs " : [
+          " correr " ,
+          " dev-debug "
+        ],
+        " porta " : 5858
+      },
+      {
+        " tipo " : " nó " ,
+        " request " : " launch " ,
+        " nome " : " Programa de lançamento " ,
+        " program " : " $ {workspaceRoot} / start "
+      },
+      {
+        " tipo " : " nó " ,
+        " request " : " attach " ,
+        " nome " : " Anexar à porta " ,
+        " endereço " : " localhost " ,
+        " porta " : 5858
+      }
+    ],
+    "configurations": [
+        
+
+    ]
+  }

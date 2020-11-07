@@ -1,43 +1,24 @@
 <template>
   <section class="home">
-    <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-      <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
-        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
-
-        <div class="mb-12 xl:mb-0">
-          <h4 v-if="isSignedUp">Thank you - we'll be in touch shortly.</h4>
-
-          <form
-            v-else
-            @submit.prevent="handleSubmit"
-            name="signups"
-            netlify
-            class="flex items-center border-b border-b-2 border-blue-400 py-2"
-          >
-            <input
-              ref="emailInput"
-              v-model="form.email"
-              class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-              type="text"
-              name="email"
-              placeholder="your@email.com"
-              aria-label="Email address"
-            />
-
-            <button
-              class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
-              type="submit"
-            >
-              Sign Up
-            </button>
-          </form>
+    <div class="md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <div style="padding-bottom: 16%;" class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+        <p>Em breve,</br>
+        você conhecerá</br>
+        sua nova</br>
+        agência.</p>
+        <div class="subtext">Siga-nos nas nossas redes, para acompanhar nossas atividades.</br>
+          E, aproveite para baixar aqui nosso Brandbook e o manual de Identidade da</br>
+          agência, para conhecer o incrivel mundo de buckett. rs
         </div>
+        <!-- <img :src="imageText" alt="Logo" /> -->
+        <nuxt-link to="/blog" class="block font-medium ">
+            <img :src="botao" class="button" alt="Logo" />
+          </nuxt-link>
       </div>
-      <div class="flex flex-col w-full xl:w-2/5">
+      <div class="flex flex-col w-full xl:w-3/5">
         <img
           alt="Hero"
-          class="rounded shadow-xl"
-          src="https://source.unsplash.com/random/720x400"
+          :src="imagePc"
         />
       </div>
     </div>
@@ -47,7 +28,6 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
 import settings from '@/content/settings/general.json';
-
 @Component({
   // Called to know which transition to apply
   transition() {
@@ -56,7 +36,9 @@ import settings from '@/content/settings/general.json';
 })
 export default class Home extends Vue {
   welcomeText = settings.welcomeText;
-
+  imageText = settings.imageText;
+  botao = settings.botao;
+  imagePc = settings.imagePc;
   get posts(): Post[] {
     return this.$store.state.posts;
   }
@@ -99,3 +81,25 @@ export default class Home extends Vue {
   }
 }
 </script>
+<style> 
+
+p {
+   font-family: Cocogoose Pro Regular;
+    font-size: 3vw;
+    LINE-HEIGHT: 90%;
+    padding-top: 19%;
+    padding-left: 15%;
+    color: #00BDBD;
+}
+.subtext{
+  font-size: 0.6vw;
+    LINE-HEIGHT: 199%;
+    padding-top: 10%;
+    padding-left: 15%;
+}
+.button{
+      padding-top: 6%;
+    padding-left: 15%;
+    width: 69%;
+}
+</style>
