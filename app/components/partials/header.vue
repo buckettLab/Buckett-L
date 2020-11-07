@@ -10,27 +10,27 @@
       <ul class="flex flex-row items-center sm:mt-4 sm:pt-4 md:mt-0 md:pt-0 md:mr-4 lg:mr-8">
         <li>
           <nuxt-link to="/blog" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
-            Youtube
+            <img :src="youtu" alt="Logo" />
           </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/blog" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
-            Instagram
+            <img :src="insta" alt="Logo" />
           </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/blog" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
-            Facebook
+            <img :src="face" alt="Logo" />
           </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/blog" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
-            Behance
+            <img :src="behance" alt="Logo" />
           </nuxt-link>
         </li>
         <li>
           <nuxt-link to="/blog" class="block font-medium px-4 py-1 md:p-2 lg:px-4">
-            Linkedin
+            <img :src="linke" alt="Logo" />
           </nuxt-link>
         </li>
       </ul>
@@ -49,6 +49,12 @@ export default class Header extends Vue {
   }
 
   logo = settings.logo;
+  face = settings.face;
+  insta = settings.insta;
+  linke = settings.linke;
+  botao = settings.botao;
+  behance = settings.behance;
+  youtu = settings.youtu;
 }
 </script>
 
